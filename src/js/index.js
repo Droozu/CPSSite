@@ -4,22 +4,7 @@ const MOBILE_WIDTH = 320;
 const MOBILE_PLUS_WIDTH = 360;
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1440;
-let SCROLL_WIDTH;
 
-{
-  let div = document.createElement('div');
-
-  div.style.overflowY = 'scroll';
-  div.style.width = '50px';
-  div.style.height = '50px';
-
-  document.body.append(div);
-  SCROLL_WIDTH = div.offsetWidth - div.clientWidth;
-  console.log(SCROLL_WIDTH);
-  div.remove();
-}
-
-// Debounce
 
 const debounce = function (func, wait, immediate) {
   var timeout;
@@ -142,7 +127,7 @@ const debounce = function (func, wait, immediate) {
         spaceBetween: 24,
       },
     }
-  }
+  };
 
   let swiperSettingsNav = {
     slidesPerView: 'auto',
@@ -157,11 +142,11 @@ const debounce = function (func, wait, immediate) {
         spaceBetween: 8,
       },
     }
-  }
+  };
 
   if (window.innerWidth < TABLET_WIDTH) {
-    swiperBrandList = new Swiper('.brand-list', swiperSettings)
-    swiperTypeList = new Swiper('.type-list', swiperSettings)
+    swiperBrandList = new Swiper('.brand-list', swiperSettings);
+    swiperTypeList = new Swiper('.type-list', swiperSettings);
     swiperPriceList = new Swiper('.price-list', swiperSettings)
   }
 
@@ -175,8 +160,8 @@ const debounce = function (func, wait, immediate) {
       if (swiperTypeList) swiperTypeList.destroy();
       if (swiperPriceList) swiperPriceList.destroy();
     } else {
-      swiperBrandList = new Swiper('.brand-list', swiperSettings)
-      swiperTypeList = new Swiper('.type-list', swiperSettings)
+      swiperBrandList = new Swiper('.brand-list', swiperSettings);
+      swiperTypeList = new Swiper('.type-list', swiperSettings);
       swiperPriceList = new Swiper('.price-list', swiperSettings)
     }
 
@@ -199,7 +184,7 @@ const debounce = function (func, wait, immediate) {
     'modal--menu': document.querySelector('.nav'),
     'modal--contacts': document.querySelector('.modal--contacts'),
     'modal--call': document.querySelector('.modal--call'),
-  }
+  };
 
   let openedModals = {};
 
@@ -210,7 +195,7 @@ const debounce = function (func, wait, immediate) {
     }
     body.classList.remove('body--overlay');
     body.style.paddingRight = null;
-  }
+  };
 
   document.addEventListener('click', (evt) => {
     if (evt.target.closest('.js-btn-modal')) {
@@ -226,7 +211,6 @@ const debounce = function (func, wait, immediate) {
         closeAllModals();
         modals[modalName].classList.remove(closeClass);
         body.classList.add('body--overlay');
-        body.style.paddingRight = SCROLL_WIDTH + 'px';
         openedModals[modalName] = closeClass;
       } else if (modalAction === 'close') {
         modals[modalName].classList.add(closeClass);
@@ -249,7 +233,7 @@ const debounce = function (func, wait, immediate) {
     320: 'all',
     768: 6,
     1440: 8,
-  }
+  };
 
   let currentBreakpoint;
 
@@ -261,10 +245,10 @@ const debounce = function (func, wait, immediate) {
   lists.forEach((list) => {
     moreItems[list.dataset.moreId] = {};
     moreItems[list.dataset.moreId].listItems = Array.from(list.children);
-  })
+  });
   btns.forEach((btn) => {
     moreItems[btn.dataset.moreId].btn = btn;
-  })
+  });
 
   const toggleList = (items, btn, action, breakpoint) => {
     let displayProperty = (action === 'hide') ? 'none' : 'flex';
@@ -283,7 +267,7 @@ const debounce = function (func, wait, immediate) {
         btn.classList.remove('btn--line--less');
         btn.classList.add('btn--line--more');
       } else {
-        btn.innerText = 'Скрыть'
+        btn.innerText = 'Скрыть';
         btn.dataset.status = 'display';
         btn.classList.remove('btn--line--more');
         btn.classList.add('btn--line--less');
@@ -291,7 +275,7 @@ const debounce = function (func, wait, immediate) {
     } else {
       btn.style.display = 'none';
     }
-  }
+  };
 
   const initLists = (evt) => {
     let action;
@@ -308,7 +292,7 @@ const debounce = function (func, wait, immediate) {
     for (let list in moreItems) {
       toggleList(moreItems[list].listItems, moreItems[list].btn, action, currentBreakpoint)
     }
-  }
+  };
 
   initLists();
 
@@ -336,10 +320,10 @@ const debounce = function (func, wait, immediate) {
   blocks.forEach((block) => {
     moreItems[block.dataset.moreId] = {};
     moreItems[block.dataset.moreId].block = block;
-  })
+  });
   btns.forEach((btn) => {
     moreItems[btn.dataset.moreId].btn = btn;
-  })
+  });
 
   const toggleBlock = (block, btn, action) => {
     if (action === 'hide') {
@@ -349,13 +333,13 @@ const debounce = function (func, wait, immediate) {
       btn.classList.add('btn--line--more');
       block.style.cssText = '';
     } else {
-      btn.innerText = 'Скрыть'
+      btn.innerText = 'Скрыть';
       btn.dataset.status = 'display';
       btn.classList.remove('btn--line--more');
       btn.classList.add('btn--line--less');
       block.style.height = 'auto';
     }
-  }
+  };
 
   btns.forEach((btn) => {
     btn.addEventListener('click', function () {
