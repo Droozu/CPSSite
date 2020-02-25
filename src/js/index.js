@@ -1,10 +1,22 @@
 import '../scss/style.scss';
 
 const MOBILE_WIDTH = 320;
-const MOBILE_PLUS_WIDTH = 360;
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1440;
+let SCROLL_WIDTH;
 
+{
+  let div = document.createElement('div');
+
+  div.style.overflowY = 'scroll';
+  div.style.width = '50px';
+  div.style.height = '50px';
+
+  document.body.append(div);
+  SCROLL_WIDTH = div.offsetWidth - div.clientWidth;
+  console.log(SCROLL_WIDTH);
+  div.remove();
+}
 
 const debounce = function (func, wait, immediate) {
   var timeout;
@@ -216,6 +228,7 @@ const debounce = function (func, wait, immediate) {
         modals[modalName].classList.add(closeClass);
         if (Object.keys(openedModals).length <= 1) {
           body.classList.remove('body--overlay');
+          body.style.paddingRight = SCROLL_WIDTH + 'px';
           body.style.paddingRight = null;
         }
         delete openedModals[modalName];
