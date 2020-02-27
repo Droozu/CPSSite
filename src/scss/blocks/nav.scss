@@ -1,17 +1,17 @@
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  padding: 24px 16px;
+  background-color: $bgWhite;
+  box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
   display: flex;
   flex-direction: column;
-  width: 100vw;
   height: 100vh;
-  z-index: 9;
+  left: 0;
   overflow: auto;
+  padding: 24px 16px;
+  position: fixed;
+  top: 0;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  width: 100vw;
+  z-index: 9;
 
   &--closed {
     transform: translateX(-100%);
@@ -35,24 +35,24 @@
 
 @media (min-width: $desktop) {
   .nav {
-    width: 320px;
+    box-shadow: none;
     height: 100vh;
     overflow: auto;
-    box-shadow: none;
-    transform: translateX(0);
-    transition: none;
     position: static; // for IE11
     position: sticky;
+    transform: translateX(0);
+    transition: none;
+    width: 320px;
     z-index: 0;
 
     &:before {
+      background-color: $bgSkyLight;
       content: '';
-      position: absolute;
-      width: 1px;
       height: 100%;
-      background-color: #D9FFF5;
-      top: 0;
+      position: absolute;
       right: 4px;
+      top: 0;
+      width: 1px;
     }
   }
 }
@@ -97,14 +97,14 @@
 
 .nav__link {
   color: inherit;
-  text-decoration: none;
-  line-height: 32px;
   font-size: 16px;
   font-weight: 500;
-  width: 100%;
-
   letter-spacing: -0.2px;
+  line-height: 32px;
   position: relative;
+
+  text-decoration: none;
+  width: 100%;
 
   &:hover,
   &:focus {
@@ -113,18 +113,18 @@
   }
 
   &--active {
-    color: #7E7E82;
+    color: $textGrey;
 
     &:before {
+      background-color: $bgSky;
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
       content: '';
+      height: 100%;
+      left: -16px;
       position: absolute;
       top: 0;
-      left: -16px;
-      height: 100%;
       width: 4px;
-      background-color: #41F6D7;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
     }
   }
 }
@@ -192,12 +192,12 @@
 }
 
 .nav__langs-link {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  font-weight: 500;
-  text-decoration: none;
   color: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  line-height: 24px;
+  text-decoration: none;
 
   &:hover,
   &:focus {
@@ -206,6 +206,6 @@
   }
 
   &--active {
-    color: #7E7E82;
+    color: $textGrey;
   }
 }

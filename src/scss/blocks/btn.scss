@@ -1,27 +1,27 @@
 .btn {
   @include btn-reset;
-  text-decoration: none;
   flex-shrink: 0;
+  text-decoration: none;
 
 
   &--circle {
     display: flex;
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
     flex-grow: 0;
     flex-shrink: 0;
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
 
     &:before {
-      content: '';
-      background-color: #FF3E79;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      flex-grow: 0;
-      background-repeat: no-repeat;
+      background-color: $bgPink;
       background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      content: '';
+      flex-grow: 0;
+      flex-shrink: 0;
+      height: 40px;
+      width: 40px;
     }
 
     &:hover,
@@ -35,15 +35,15 @@
 
     &--light {
       &::before {
-        border: 1px solid #FF3E79;
         background-color: transparent;
         background-size: 7.5px 12px;
+        border: 1px solid $brdPink;
       }
 
       &:hover,
       &:focus {
         &::before {
-          background-color: #FF3E79;
+          background-color: $bgPink;
           background-image: url('../img/arrow-right-white.svg');
         }
       }
@@ -89,11 +89,11 @@
   }
 
   &--line {
+    color: $textBlack;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    color: #1B1C21;
     font-weight: 500;
+    letter-spacing: -0.2px;
+    line-height: 24px;
 
     &::before,
     &::after {
@@ -139,20 +139,20 @@
   }
 
   &--classic {
-    display: flex;
     align-items: center;
-    background: #FF3E79;
+    background: $bgPink;
     border-radius: 16px;
+    color: $textWhite;
+    display: flex;
     font-size: 12px;
-    line-height: 16px;
-    text-align: left;
-    letter-spacing: -0.15px;
-    text-transform: uppercase;
-    color: #FFFFFF;
     font-weight: bold;
+    letter-spacing: -0.15px;
+    line-height: 16px;
     padding: 8px 10px;
-    position: relative;
     padding-right: 25px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
 
     &::before {
       content: '';
@@ -189,13 +189,13 @@
     }
 
     &--circle--text .btn__text {
-      order: -1;
+      color: $textBlack;
       font-size: 16px;
-      line-height: 24px;
-      letter-spacing: -0.2px;
-      margin-right: 8px;
-      color: #1B1C21;
       font-weight: 500;
+      letter-spacing: -0.2px;
+      line-height: 24px;
+      margin-right: 8px;
+      order: -1;
     }
 
     &--circle--text:hover .btn__text {

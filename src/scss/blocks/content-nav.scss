@@ -20,21 +20,21 @@
 }
 
 .content-nav__link {
+  border: 2px solid transparent;
+  color: $textGrey;
   display: block;
+  font-weight: 500;
+  letter-spacing: -0.2px;
   line-height: 36px;
   padding: 0 8px;
-  border: 2px solid transparent;
   text-decoration: none;
-  letter-spacing: -0.2px;
-  color: #7E7E82;
-  font-weight: 500;
 
   &:hover,
   &:focus,
   &--active {
+    background-color: $bgWhite;
+    border-color: $brdSky;
     border-radius: 6px;
-    border-color: #B8FFEC;
-    background-color: #FFFFFF;
   }
 }
 

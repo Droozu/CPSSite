@@ -329,6 +329,7 @@ const debounce = function (func, wait, immediate) {
 
   let btns = Array.from(document.querySelectorAll('.js-btn--more-text'));
   let blocks = Array.from(document.querySelectorAll('.js-block--more-text'));
+  // let img = document.querySelector('.js-img--more-text');
 
   blocks.forEach((block) => {
     moreItems[block.dataset.moreId] = {};
@@ -340,17 +341,20 @@ const debounce = function (func, wait, immediate) {
 
   const toggleBlock = (block, btn, action) => {
     if (action === 'hide') {
+      // console.log(`${img.width} ${img.height}`);
       btn.innerText = 'Читать далее';
       btn.dataset.status = 'hidden';
       btn.classList.remove('btn--line--less');
       btn.classList.add('btn--line--more');
       block.style.cssText = '';
+      block.style.animation = 'slideUp 1s ease-out forwards';
     } else {
+      // console.log(img.width + img.height);
       btn.innerText = 'Скрыть';
       btn.dataset.status = 'display';
       btn.classList.remove('btn--line--more');
       btn.classList.add('btn--line--less');
-      block.style.height = 'auto';
+      block.style.animation = 'slideDown 3s forwards';
     }
   };
 

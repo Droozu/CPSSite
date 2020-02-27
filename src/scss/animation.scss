@@ -1,0 +1,25 @@
+@keyframes slideDown {
+  0% {
+
+  }
+
+  100% {
+    max-height: 100vmax;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: 100vmax;
+  }
+
+  70%  {
+    animation-duration: 0.1ms;
+    max-height: 289px;
+
+  }
+
+  100% {
+    animation-duration: 1s;
+  }
+}

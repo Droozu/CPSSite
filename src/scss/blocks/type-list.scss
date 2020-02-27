@@ -16,15 +16,15 @@
 }
 
 .type-list__item {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 16px;
-  min-height: 160px;
-  width: 240px;
-  background: #FFFFFF;
-  border: 1px solid #EAEAEA;
+  background: $bgWhite;
+  border: 1px solid $brdWhite;
   border-radius: 6px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  min-height: 160px;
+  padding: 16px;
+  width: 240px;
 }
 
 @media (min-width: $tablet) {

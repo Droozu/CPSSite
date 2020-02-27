@@ -1,9 +1,9 @@
 .body {
+  background-color: $bgGreyLight;
+  color: $textBlack;
   font-family: TTLakes, Tahoma, sans-serif;
   font-size: 14px;
   line-height: 18px;
-  color: #1B1C21;
-  background-color: #F8F8F8;
 
   &:before {
     content: '';

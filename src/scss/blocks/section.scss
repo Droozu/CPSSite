@@ -2,24 +2,20 @@
   margin-bottom: 24px;
 
   &--text-about {
-    position: relative;
-    padding-bottom: calc((100vw * 0.578) + 16px);
-    ;
+    display: flex;
+    flex-flow: row wrap;
+
   }
 }
 
 @media (min-width: $tablet) {
   .section {
-    &--text-about {
-      position: static;
-      padding-bottom: 0;
-      min-height: calc((50vw - 24px) / 1.73077);
 
-      &::after {
-        content: '';
-        display: block;
-        clear: both;
-      }
+    &--text-about {
+      flex-wrap: nowrap;
+      min-height: calc((50vw - 24px) / 1.73077);
+      padding-bottom: 0;
+
     }
   }
 }
@@ -27,6 +23,8 @@
 @media (min-width: $desktop) {
   .section {
     &--text-about {
+      align-items: flex-start;
+      justify-content: space-between;
       min-height: 309px;
     }
   }
@@ -73,7 +71,7 @@
 @media (min-width: $tablet) {
   .section__type-list {
     margin-left: 0;
-    margin-right: -24зч;
+    margin-right: -24px;
   }
 }
 

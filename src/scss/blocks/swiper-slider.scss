@@ -14,15 +14,15 @@
 }
 
 .swiper-pagination-bullet {
-  width: 1em;
+  background-color: $bgWhiteLight;
   height: 1em;
-  background-color: #dddddd;
-  opacity: 1;
   margin: 0 6px;
+  opacity: 1;
+  width: 1em;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #B5B6BC;
+  background-color: $bgGrey;
 }
 
 .swiper-slide {

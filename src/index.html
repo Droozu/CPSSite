@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv=" X-UA-Compatible" content="ie=edge">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
   <title><%= htmlWebpackPlugin.options.title %></title>
 
   <link rel="alternate" hreflang="en" href="#">
@@ -182,8 +182,6 @@
         <section class="main__section section section--text-about">
 
           <div class="section__text-about text-about">
-            <button class="section__more-btn btn btn--line btn--line--more js-btn--more-text" data-more-text-id="1">Читать
-              далее</button>
             <div class="text-about__text js-block--more-text" data-more-text-id="1">
               <p class="paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у
                 нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
@@ -211,9 +209,12 @@
                 excepturi
                 nisi, facilis vel repudiandae provident libero?</p>
             </div>
+
+            <button class="section__more-btn btn btn--line btn--line--more js-btn--more-text" data-more-text-id="1">Читать
+                  далее</button>
           </div>
 
-          <img alt="Фотография логотипа CPS на стене" class="text-about__img" src="img/wall.jpg">
+          <img alt="Фотография логотипа CPS на стене" class="text-about__img js-img--more-text" src="img/wall.jpg">
         </section>
         <section class="main__section section" id="1">
           <h2 class="section__title title title--secondary">Ремонт техники различных брендов</h2>
